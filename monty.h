@@ -54,13 +54,14 @@ typedef struct file_model_s
 } file_model_t;
 extern file_model_t file_model;
 
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file);
 void free_stack(stack_t *head);
-void f_push(stack_t **head, unsigned int number);
-void f_pall(stack_t **head, unsigned int number);
-void f_pint(stack_t **head, unsigned int number);
-void f_pop(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
-void f_add(stack_t **head, unsigned int counter);
-void f_nop(stack_t **head, unsigned int counter);
+void addnode(stack_t **head, int n);
+void f_push(stack_t **head, unsigned int line_number);
+void f_pall(stack_t **head, unsigned int line_number);
+void f_pint(stack_t **head, unsigned int line_number);
+void f_pop(stack_t **head, unsigned int line_number);
+void f_swap(stack_t **head, unsigned int line_number);
+void f_add(stack_t **head, unsigned int line_number);
+void f_nop(stack_t **head, unsigned int line_number);
 #endif
