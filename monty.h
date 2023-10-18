@@ -1,5 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -30,4 +37,20 @@ typedef struct instruction_s
     char *opcode;
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: arguments value
+ * @file: pointer to monty file
+ * @content: line content
+ * Description: carries values through the program
+ */
+typedef struct file_model_s
+{
+    FILE *file;
+    char *arg;
+    char *content;
+
+} file_model_t;
+extern file_model_t file_model;
 #endif
