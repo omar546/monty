@@ -32,5 +32,5 @@ void f_push(stack_t **head, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
     new_number = atoi(file_model.arg);
-    addnode(head, new_number);
+    push_node(head, new_number);
 }
